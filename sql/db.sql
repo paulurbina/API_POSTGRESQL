@@ -12,3 +12,32 @@ CREATE TABLE IF NOT EXISTS actions (
     done BOOLEAN,
     projectId INTEGER REFERENCES projects(id)
 );
+
+--INSERT PROJECTS DATA
+
+INSERT INTO projects(name, priority, description, deliverydate)
+    VALUES('web Rockys', 1, 'Using Javascript', '2019-05-22');
+    
+INSERT INTO projects(name, priority, description, deliverydate)
+    VALUES('web Cibertec', 2, 'Using python', '2019-05-22');
+    
+INSERT INTO projects(name, priority, description, deliverydate)
+    VALUES('web Miraflores', 3, 'Using Golang', '2019-05-22');
+    
+INSERT INTO projects(name, priority, description, deliverydate)
+    VALUES('web Magdalena', 4, 'Using Ruby', '2019-05-22');
+
+--INSERT ACTIONS DATA
+
+INSERT INTO actions(name, done, projectId)
+    VALUES('donwload ReactJs', true, 1);
+
+    
+INSERT INTO actions(name, done, projectId)
+    VALUES('donwload Vuejs', true, 1);
+    
+INSERT INTO actions(name, done, projectId)
+    VALUES('donwload BadBun', true, 1);
+    
+INSERT INTO actions(name, done, projectId)
+    VALUES('donwload Jquery', true, 1);

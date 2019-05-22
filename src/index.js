@@ -5,4 +5,4 @@ async function index() {
     console.log('server on port 3000');
 }
 
-index();
+index();    
