@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // routes
-app.use('/app/projects', projectRoutes);
-app.use('/app/actions', actionsRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/actions', actionsRoutes);
 
 export default app;
