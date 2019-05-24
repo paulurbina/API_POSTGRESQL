@@ -7,7 +7,7 @@ import actionsRoutes from './routes/actions';
 
 const app = express();
 
-// Midlewares
+// Midlewares   
 app.use(morgan('dev'));
 app.use(express.json());
 
