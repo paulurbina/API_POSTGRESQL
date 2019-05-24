@@ -13,7 +13,7 @@ const Action = sequelize.define('action', {
     done: {
         type: Sequelize.BOOLEAN
     },
-    projectId: {
+    projectid: {
         type: Sequelize.INTEGER
     },
 }, {
