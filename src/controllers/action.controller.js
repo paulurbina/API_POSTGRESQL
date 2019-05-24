@@ -31,7 +31,7 @@ export async function getAction(req, res) {
         const action = await Action.findAll({
             attributes: [ 'id', 'name', 'done', 'projectid' ],
             order: [
-                ['id', 'DESC']
+                ['id', 'ASC']
             ]
         });
         if (action) {
@@ -131,8 +131,28 @@ export async function updateAction(req, res) {
         });
     }
 
-}
+};
 
-export function getActionByProject(req, res) {
-
-}
+export async function getActionByProject(req, res) {
+    const { projectid } = req.params;
+    try {
+        if (projectid) {
+            const action = await Action.findAll({
+                attributes: [ 'id', 'name', 'done', 'projectid' ],
+                where: {
+                    projectid
+                }
+            });
+            res.status(200).json({
+                message: 'this is the actions per project',
+                data: action
+            });
+        }
+    } catch (e) {
+        console.log(e);
+        res.status(500).json({
+            message: 'no actions were found by projects',
+            data: {}
+        });
+    }
+};
